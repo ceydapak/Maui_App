@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_180209010_CeydaPak_App6.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <VerticalStackLayout HorizontalOptions="Center">
+
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Image Source="icon.png"  WidthRequest="50"/>
+                    <Label Text="Sales Rep."/>
+                </VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Name : "/>
+               <Entry x:Name="S_Name"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout>
+                <Label Text="Last Name : "/>
+                <Entry x:Name="S_L_Name"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout>
+                <Label Text="Tel No. :"/>
+                <Entry x:Name="S_Tel"/>
+            </HorizontalStackLayout>
+         
+
+            <HorizontalStackLayout>
+
+                <RadioButton x:Name="Gender_F" Content="Female"/>
+                <RadioButton x:Name="Gender_M" Content="Male"/>
+                
+            </HorizontalStackLayout>
+
+            <Label Text="Interest to Cover"/>
+
+            <VerticalStackLayout>
+                <HorizontalStackLayout>
+                    <CheckBox x:Name="I1" />
+                    <Image Source="icon.png" HeightRequest="50" WidthRequest="50"/>
+                    <CheckBox x:Name="I2" />
+                    <Image Source="icon.png" HeightRequest="50" WidthRequest="50"/>
+
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <CheckBox x:Name="I3" />
+                        <Image Source="icon.png" HeightRequest="50" WidthRequest="50" />
+                    <CheckBox x:Name="I4" />
+                        <Image Source="icon.png" HeightRequest="50" WidthRequest="50" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <StackLayout BackgroundColor="Blue">
+                    <Button Text="Add" TextColor="Black" BackgroundColor="White" WidthRequest="100" Margin="5"   x:Name="Add_Button" Clicked="Add_Button_Clicked" />
+            </StackLayout>
+                <ListView x:Name="List_View" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <HorizontalStackLayout>
+                                    <Label Text="{Binding  S_Name}" Margin="10"/>
+                                    <Label Text="{Binding  S_L_Name}" Margin="10"/>
+                                    <Label Text="{Binding S_Tel}" Margin="10"/>
+                                    <Label Text="{Binding  S_Gender}" Margin="10"/>
+                                </HorizontalStackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            <StackLayout BackgroundColor="Blue">
+                <Button Text="Show" TextColor="Black" BackgroundColor="White" WidthRequest="100" Margin="5" x:Name="Show_Button" Clicked="Show_Button_Clicked" />
+            </StackLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
